@@ -7,7 +7,7 @@ export const Home: React.FC = memo(() => {
 
     return (
         <View>
-            <Text className={'text-white font-bold text-4xl'}>
+            <Text className={'text-white font-bold'}>
                 Home
             </Text>
         </View>
