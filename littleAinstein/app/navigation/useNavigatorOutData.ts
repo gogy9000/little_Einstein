@@ -4,21 +4,22 @@ import { RouteProp } from '@react-navigation/core/lib/typescript/src/types'
 
 type screenListenersParamsType = {
 	route: RouteProp<RootStackParamList>
-	navigation: any
+	navigation: { navigate: TypeNavigate }
 }
 
 export const useNavigatorOutData = () => {
-	const [currentRoute, setCurrentRoute] = useState<string | undefined>(
-		undefined
-	)
+	const [currentRoute, setCurrentRoute] = useState<
+		keyof RootStackParamList | undefined
+	>(undefined)
 	const [currentNavigation, setCurrentNavigation] = useState<
-		TypeNavigate | undefined
+		{ navigate: TypeNavigate } | undefined
 	>(undefined)
 
 	const screenListeners = useCallback(
 		({ route, navigation }: screenListenersParamsType) => ({
 			state() {
 				setCurrentRoute(route.name)
+
 				setCurrentNavigation(navigation)
 			}
 		}),
