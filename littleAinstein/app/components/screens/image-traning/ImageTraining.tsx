@@ -1,5 +1,7 @@
 import React, {memo} from 'react'
-import {Text, View} from 'react-native'
+import {Button, Layout} from "../../ui";
+import {Heading} from "../../ui";
+
 
 interface IImageTrainingProps {
 
@@ -8,10 +10,9 @@ interface IImageTrainingProps {
 export const ImageTraining: React.FC<IImageTrainingProps> = memo(({}) => {
 
     return (
-        <View>
-            <Text>
-                ImageTraining
-            </Text>
-        </View>
+        <Layout>
+            <Heading title={'Training'}/>
+            <Button isLoading={true}>Button</Button>
+        </Layout>
     )
 })
